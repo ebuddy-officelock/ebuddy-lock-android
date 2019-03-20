@@ -19,8 +19,8 @@ import java.io.InputStream;
 
 public class PartAuthority {
 
-  private static final String PART_URI_STRING   = "content://org.thoughtcrime.securesms/part";
-  private static final String THUMB_URI_STRING  = "content://org.thoughtcrime.securesms/thumb";
+  private static final String PART_URI_STRING   = "content://com.ebuddy.android.xms/part";
+  private static final String THUMB_URI_STRING  = "content://com.ebuddy.android.xms/thumb";
   private static final Uri    PART_CONTENT_URI  = Uri.parse(PART_URI_STRING);
   private static final Uri    THUMB_CONTENT_URI = Uri.parse(THUMB_URI_STRING);
 
@@ -33,8 +33,8 @@ public class PartAuthority {
 
   static {
     uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-    uriMatcher.addURI("org.thoughtcrime.securesms", "part/*/#", PART_ROW);
-    uriMatcher.addURI("org.thoughtcrime.securesms", "thumb/*/#", THUMB_ROW);
+    uriMatcher.addURI("com.ebuddy.android.xms", "part/*/#", PART_ROW);
+    uriMatcher.addURI("com.ebuddy.android.xms", "thumb/*/#", THUMB_ROW);
     uriMatcher.addURI(DeprecatedPersistentBlobProvider.AUTHORITY, DeprecatedPersistentBlobProvider.EXPECTED_PATH_OLD, PERSISTENT_ROW);
     uriMatcher.addURI(DeprecatedPersistentBlobProvider.AUTHORITY, DeprecatedPersistentBlobProvider.EXPECTED_PATH_NEW, PERSISTENT_ROW);
     uriMatcher.addURI(BlobProvider.AUTHORITY, BlobProvider.PATH, BLOB_ROW);

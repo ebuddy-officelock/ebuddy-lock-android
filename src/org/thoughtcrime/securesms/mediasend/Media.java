@@ -12,7 +12,7 @@ import org.whispersystems.libsignal.util.guava.Optional;
  */
 public class Media implements Parcelable {
 
-  public static final String ALL_MEDIA_BUCKET_ID = "org.thoughtcrime.securesms.ALL_MEDIA";
+  public static final String ALL_MEDIA_BUCKET_ID = "com.ebuddy.android.xms.ALL_MEDIA";
 
   private final Uri    uri;
   private final String mimeType;

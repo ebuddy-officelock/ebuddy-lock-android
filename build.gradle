@@ -297,6 +297,8 @@ android {
     }
 
     defaultConfig {
+        applicationId "com.ebuddy.android.xms"
+        
         versionCode 470
         versionName "4.36.2"
 
@@ -308,16 +310,16 @@ android {
         project.ext.set("archivesBaseName", "Signal");
 
         buildConfigField "long", "BUILD_TIMESTAMP", getLastCommitTimestamp() + "L"
-        buildConfigField "String", "SIGNAL_URL", "\"https://textsecure-service.whispersystems.org\""
-        buildConfigField "String", "SIGNAL_CDN_URL", "\"https://cdn.signal.org\""
-        buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://api.directory.signal.org\""
+        buildConfigField "String", "SIGNAL_URL", "\"https://services.officelock.com\""
+        buildConfigField "String", "SIGNAL_CDN_URL", "\"https://cdn.officelock.com\""
+        buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://services.officelock.com:9443\""
         buildConfigField "String", "SIGNAL_SERVICE_STATUS_URL", "\"uptime.signal.org\""
         buildConfigField "String", "CONTENT_PROXY_HOST", "\"contentproxy.signal.org\""
         buildConfigField "int", "CONTENT_PROXY_PORT", "443"
         buildConfigField "String", "USER_AGENT", "\"OWA\""
         buildConfigField "boolean", "DEV_BUILD", "false"
-        buildConfigField "String", "MRENCLAVE", "\"cd6cfc342937b23b1bdd3bbf9721aa5615ac9ff50a75c5527d441cd3276826c9\""
-        buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BXu6QIKVz5MA8gstzfOgRQGqyLqOwNKHL6INkv3IHWMF\""
+        buildConfigField "String", "MRENCLAVE", "\"ba0f075dca49e2bfdbbb1ef9cb2383d71672cfb92ad49e95700df7c7aae68e06\""
+        buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BYrLZP4MR9uRWJBmX0v1Ob5PrU7/jK9kHwn2dwyapmR3\""
         buildConfigField "String[]", "LANGUAGES", "new String[]{\"" + autoResConfig().collect { s -> s.replace('-r', '_') }.join('", "') + '"}'
 
         ndk {
@@ -454,18 +456,18 @@ def assembleWebsiteDescriptor = { variant, file ->
 }
 
 def signProductionRelease = { variant ->
-    String apkName    = variant.outputs[0].outputFile.name
-    File   inputFile  = new File(variant.outputs[0].outputFile.path);
-    File   outputFile = new File(variant.outputs[0].outputFile.parent, apkName.replace("-unsigned", ""));
-
-    new ApkSignerUtil("sun.security.pkcs11.SunPKCS11",
-                      "pkcs11.config",
-                      "PKCS11",
-                      "file:pkcs11.password").calculateSignature(inputFile.getAbsolutePath(),
-                                                                 outputFile.getAbsolutePath());
-
-    inputFile.delete();
-    return outputFile
+//    String apkName    = variant.outputs[0].outputFile.name
+//    File   inputFile  = new File(variant.outputs[0].outputFile.path);
+//    File   outputFile = new File(variant.outputs[0].outputFile.parent, apkName.replace("-unsigned", ""));
+//
+//    new ApkSignerUtil("sun.security.pkcs11.SunPKCS11",
+//                      "pkcs11.config",
+//                      "PKCS11",
+//                      "file:pkcs11.password").calculateSignature(inputFile.getAbsolutePath(),
+//                                                                 outputFile.getAbsolutePath());
+//
+//    inputFile.delete();
+//    return outputFile
 }
 
 task signProductionPlayRelease {

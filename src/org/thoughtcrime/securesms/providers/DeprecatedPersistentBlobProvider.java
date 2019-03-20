@@ -31,9 +31,9 @@ public class DeprecatedPersistentBlobProvider {
 
   private static final String TAG = DeprecatedPersistentBlobProvider.class.getSimpleName();
 
-  private static final String     URI_STRING            = "content://org.thoughtcrime.securesms/capture-new";
+  private static final String     URI_STRING            = "content://com.ebuddy.android.xms/capture-new";
   public  static final Uri        CONTENT_URI           = Uri.parse(URI_STRING);
-  public  static final String     AUTHORITY             = "org.thoughtcrime.securesms";
+  public  static final String     AUTHORITY             = "com.ebuddy.android.xms";
   public  static final String     EXPECTED_PATH_OLD     = "capture/*/*/#";
   public  static final String     EXPECTED_PATH_NEW     = "capture-new/*/*/*/*/#";
 
