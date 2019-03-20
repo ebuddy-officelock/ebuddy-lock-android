@@ -72,11 +72,8 @@ dependencies {
     compile 'android.arch.lifecycle:common-java8:1.1.1'
     compile 'android.arch.work:work-runtime:1.0.0'
 
-    compile('com.google.firebase:firebase-messaging:17.3.4') {
-        exclude group: 'com.google.firebase', module: 'firebase-core'
-        exclude group: 'com.google.firebase', module: 'firebase-analytics'
-        exclude group: 'com.google.firebase', module: 'firebase-measurement-connector'
-    }
+    compile 'com.google.firebase:firebase-core:16.0.8'
+    compile 'com.google.firebase:firebase-messaging:17.3.4'
 
     compile 'com.google.android.gms:play-services-maps:16.0.0'
     compile 'com.google.android.gms:play-services-places:16.0.0'
@@ -218,7 +215,7 @@ dependencyVerification {
         'com.google.android.gms:play-services-tasks:b31c18d8d1cc8d9814f295ee7435471333f370ba5bd904ca14f8f2bec4f35c35',
         'com.google.android.gms:play-services-places-placereport:04f8baeb1f8f8a734c7d4b1701a3974281b45591affa7e963b59dd019b8abc6e',
         'com.google.android.gms:play-services-stats:5b2d8281adbfd6e74d2295c94bab9ea80fc9a84dfbb397995673f5af4d4c6368',
-        'com.google.android.gms:play-services-basement:e08bfd1e87c4e50ef76161d7ac76b873aeb975367eeb3afa4abe62ea1887c7c6',
+//        'com.google.android.gms:play-services-basement:e08bfd1e87c4e50ef76161d7ac76b873aeb975367eeb3afa4abe62ea1887c7c6',
         'com.android.support:support-v4:8b9031381c678d628c9e47b566ae1d161e1c9710f7855c759beeac7596cecf30',
         'com.android.support:support-fragment:3772fc738ada86824ba1a4b3f197c3dbd67b7ddcfe2c9db1de95ef2e3487a915',
         'com.android.support:animated-vector-drawable:271ecbc906cda8dcd9e655ba0473129c3408a4189c806f616c378e6fd18fb3b7',
@@ -296,28 +293,37 @@ android {
         javaMaxHeapSize "4g"
     }
 
+    ext {
+        versionMajor = 3
+        versionMinor = 0
+        versionRevision = 0
+        buildNum = 11
+    }
+
     defaultConfig {
-        versionCode 470
-        versionName "4.36.2"
+        applicationId "com.ebuddy.android.xms"
+
+        versionCode versionMajor * 1000000 + versionMinor * 1000 + buildNum
+        versionName String.valueOf(versionMajor) + "." + String.valueOf(versionMinor) + "." + String.valueOf(versionRevision)
 
         minSdkVersion 14
         targetSdkVersion 26
         multiDexEnabled true
 
         vectorDrawables.useSupportLibrary = true
-        project.ext.set("archivesBaseName", "Signal");
+        project.ext.set("archivesBaseName", "eBuddy-lock");
 
         buildConfigField "long", "BUILD_TIMESTAMP", getLastCommitTimestamp() + "L"
-        buildConfigField "String", "SIGNAL_URL", "\"https://textsecure-service.whispersystems.org\""
-        buildConfigField "String", "SIGNAL_CDN_URL", "\"https://cdn.signal.org\""
-        buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://api.directory.signal.org\""
-        buildConfigField "String", "SIGNAL_SERVICE_STATUS_URL", "\"uptime.signal.org\""
+        buildConfigField "String", "SIGNAL_URL", "\"https://textsecure-service.officelock.com\""
+        buildConfigField "String", "SIGNAL_CDN_URL", "\"https://cdn.officelock.com\""
+        buildConfigField "String", "SIGNAL_CONTACT_DISCOVERY_URL", "\"https://cds.officelock.com:9443\""
+        buildConfigField "String", "SIGNAL_SERVICE_STATUS_URL", "\"uptime.officelock.com\""
         buildConfigField "String", "CONTENT_PROXY_HOST", "\"contentproxy.signal.org\""
         buildConfigField "int", "CONTENT_PROXY_PORT", "443"
         buildConfigField "String", "USER_AGENT", "\"OWA\""
         buildConfigField "boolean", "DEV_BUILD", "false"
         buildConfigField "String", "MRENCLAVE", "\"cd6cfc342937b23b1bdd3bbf9721aa5615ac9ff50a75c5527d441cd3276826c9\""
-        buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BXu6QIKVz5MA8gstzfOgRQGqyLqOwNKHL6INkv3IHWMF\""
+        buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BYrLZP4MR9uRWJBmX0v1Ob5PrU7/jK9kHwn2dwyapmR3\""
         buildConfigField "String[]", "LANGUAGES", "new String[]{\"" + autoResConfig().collect { s -> s.replace('-r', '_') }.join('", "') + '"}'
 
         ndk {
@@ -454,18 +460,18 @@ def assembleWebsiteDescriptor = { variant, file ->
 }
 
 def signProductionRelease = { variant ->
-    String apkName    = variant.outputs[0].outputFile.name
-    File   inputFile  = new File(variant.outputs[0].outputFile.path);
-    File   outputFile = new File(variant.outputs[0].outputFile.parent, apkName.replace("-unsigned", ""));
-
-    new ApkSignerUtil("sun.security.pkcs11.SunPKCS11",
-                      "pkcs11.config",
-                      "PKCS11",
-                      "file:pkcs11.password").calculateSignature(inputFile.getAbsolutePath(),
-                                                                 outputFile.getAbsolutePath());
-
-    inputFile.delete();
-    return outputFile
+//    String apkName    = variant.outputs[0].outputFile.name
+//    File   inputFile  = new File(variant.outputs[0].outputFile.path);
+//    File   outputFile = new File(variant.outputs[0].outputFile.parent, apkName.replace("-unsigned", ""));
+//
+//    new ApkSignerUtil("sun.security.pkcs11.SunPKCS11",
+//                      "pkcs11.config",
+//                      "PKCS11",
+//                      "file:pkcs11.password").calculateSignature(inputFile.getAbsolutePath(),
+//                                                                 outputFile.getAbsolutePath());
+//
+//    inputFile.delete();
+//    return outputFile
 }
 
 task signProductionPlayRelease {

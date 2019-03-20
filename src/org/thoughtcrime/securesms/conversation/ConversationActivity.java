@@ -74,6 +74,7 @@ import android.widget.Toast;
 
 import com.annimon.stream.Stream;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -1065,6 +1066,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     if (recipient == null) return;
 
     if (isSecure) {
+      FirebaseAnalytics.getInstance(getApplicationContext()).logEvent("call_started", new Bundle());
       CommunicationActions.startVoiceCall(this, recipient);
     } else {
       try {
@@ -2119,6 +2121,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
                        DatabaseFactory.getRecipientDatabase(context).setProfileSharing(recipient, true);
                      }
 
+                     Bundle bundle = new Bundle();
+                     bundle.putInt("attachment_count", outgoingMessage.getAttachments().size());
+                     FirebaseAnalytics.getInstance(getApplicationContext()).logEvent("media_message_sent", bundle);
+
                      return MessageSender.send(context, outgoingMessage, threadId, forceSms, () -> fragment.releaseOutgoingMessage(id));
                    }
 
@@ -2169,6 +2175,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
                      if (initiatingConversation) {
                        DatabaseFactory.getRecipientDatabase(context).setProfileSharing(recipient, true);
                      }
+
+                     FirebaseAnalytics.getInstance(getApplicationContext()).logEvent("text_message_sent", new Bundle());
 
                      return MessageSender.send(context, messages[0], threadId, forceSms, () -> fragment.releaseOutgoingMessage(id));
                    }

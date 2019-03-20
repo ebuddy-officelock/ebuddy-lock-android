@@ -50,8 +50,10 @@ public class FromTextView extends EmojiTextView {
     SpannableStringBuilder builder = new SpannableStringBuilder();
 
     SpannableString fromSpan = new SpannableString(fromString);
-    fromSpan.setSpan(new StyleSpan(typeface), 0, builder.length(),
-                     Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+    if (!read) {
+      fromSpan.setSpan(new TypefaceSpan("inter_bold"), 0, fromSpan.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      fromSpan.setSpan(new ForegroundColorSpan(ResUtil.getColor(getContext(), R.attr.colorPrimary)), 0, fromSpan.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
 
 
     if (recipient.isLocalNumber()) {
@@ -60,7 +62,11 @@ public class FromTextView extends EmojiTextView {
       SpannableString profileName = new SpannableString(" (~" + recipient.getProfileName() + ") ");
       profileName.setSpan(new CenterAlignedRelativeSizeSpan(0.75f), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
       profileName.setSpan(new TypefaceSpan("sans-serif-light"), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-      profileName.setSpan(new ForegroundColorSpan(ResUtil.getColor(getContext(), R.attr.conversation_list_item_subject_color)), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      if (read) {
+        profileName.setSpan(new ForegroundColorSpan(ResUtil.getColor(getContext(), R.attr.colorPrimary)), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      } else {
+        profileName.setSpan(new ForegroundColorSpan(ResUtil.getColor(getContext(), R.attr.conversation_list_item_subject_color)), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      }
 
       if (ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL){
         builder.append(profileName);

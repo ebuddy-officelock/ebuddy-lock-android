@@ -62,10 +62,10 @@ public class SignalServiceNetworkAccess {
                                                                                      new SignalContactDiscoveryUrl[] { serviceContact });
 
     this.censorshipConfiguration = new HashMap<String, SignalServiceConfiguration>() {{
-      put(COUNTRY_CODE_EGYPT, serviceConfig);
-      put(COUNTRY_CODE_UAE, serviceConfig);
-      put(COUNTRY_CODE_OMAN, serviceConfig);
-      put(COUNTRY_CODE_QATAR, serviceConfig);
+//      put(COUNTRY_CODE_EGYPT, serviceConfig);
+//      put(COUNTRY_CODE_UAE, serviceConfig);
+//      put(COUNTRY_CODE_OMAN, serviceConfig);
+//      put(COUNTRY_CODE_QATAR, serviceConfig);
     }};
 
     this.uncensoredConfiguration = new SignalServiceConfiguration(new SignalServiceUrl[] {new SignalServiceUrl(BuildConfig.SIGNAL_URL, new SignalServiceTrustStore(context))},
