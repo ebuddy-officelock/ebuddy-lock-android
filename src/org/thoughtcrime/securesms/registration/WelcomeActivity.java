@@ -28,7 +28,7 @@ public class WelcomeActivity extends BaseActionBarActivity {
   }
 
   private void onTermsClicked() {
-    CommunicationActions.openBrowserLink(this, "https://signal.org/legal");
+    CommunicationActions.openBrowserLink(this, "https://lock.ebuddy.com/termsandconditions");
   }
 
   private void onContinueClicked() {

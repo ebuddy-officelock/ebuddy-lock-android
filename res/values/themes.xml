@@ -267,6 +267,8 @@
         <item name="shared_contact_details_header_background">@color/grey_100</item>
         <item name="shared_contact_details_titlebar">@color/grey_400</item>
         <item name="shared_contact_item_button_color">@color/core_grey_02</item>
+
+        <item name="fontFamily">@font/inter</item>
     </style>
 
     <style name="TextSecure.DarkTheme" parent="@style/Theme.AppCompat">
@@ -424,6 +426,8 @@
         <item name="shared_contact_details_header_background">@color/grey_800</item>
         <item name="shared_contact_details_titlebar">@color/grey_900</item>
         <item name="shared_contact_item_button_color">@color/core_grey_85</item>
+
+        <item name="fontFamily">@font/inter</item>
     </style>
     
     <style name="RationaleDialog" parent="Theme.AppCompat.Light.Dialog.Alert">

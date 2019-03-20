@@ -1065,6 +1065,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     if (recipient == null) return;
 
     if (isSecure) {
+      SimpleAnalytics.getInstance().logEvent("call_started");
       CommunicationActions.startVoiceCall(this, recipient);
     } else {
       try {
@@ -2119,6 +2120,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
                        DatabaseFactory.getRecipientDatabase(context).setProfileSharing(recipient, true);
                      }
 
+                     SimpleAnalytics.getInstance().logEvent("media_message_sent");
+
                      return MessageSender.send(context, outgoingMessage, threadId, forceSms, () -> fragment.releaseOutgoingMessage(id));
                    }
 
@@ -2169,6 +2172,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
                      if (initiatingConversation) {
                        DatabaseFactory.getRecipientDatabase(context).setProfileSharing(recipient, true);
                      }
+
+                     SimpleAnalytics.getInstance().logEvent("text_message_sent");
 
                      return MessageSender.send(context, messages[0], threadId, forceSms, () -> fragment.releaseOutgoingMessage(id));
                    }

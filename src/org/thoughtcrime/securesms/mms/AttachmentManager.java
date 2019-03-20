@@ -413,18 +413,18 @@ public class AttachmentManager {
   }
 
   public static void selectLocation(Activity activity, int requestCode) {
-    Permissions.with(activity)
-               .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
-               .ifNecessary()
-               .withPermanentDenialDialog(activity.getString(R.string.AttachmentManager_signal_requires_location_information_in_order_to_attach_a_location))
-               .onAllGranted(() -> {
-                 try {
-                   activity.startActivityForResult(new PlacePicker.IntentBuilder().build(activity), requestCode);
-                 } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
-                   Log.w(TAG, e);
-                 }
-               })
-               .execute();
+//    Permissions.with(activity)
+//               .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+//               .ifNecessary()
+//               .withPermanentDenialDialog(activity.getString(R.string.AttachmentManager_signal_requires_location_information_in_order_to_attach_a_location))
+//               .onAllGranted(() -> {
+//                 try {
+//                   activity.startActivityForResult(new PlacePicker.IntentBuilder().build(activity), requestCode);
+//                 } catch (Exception e) {
+//                   Log.w(TAG, e);
+//                 }
+//               })
+//               .execute();
   }
 
   public static void selectGif(Activity activity, int requestCode, boolean isForMms) {

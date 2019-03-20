@@ -25,3 +25,5 @@ obj/
 jni/libspeex/.deps/
 *.sh
 pkcs11.password
+ebuddy-android.keystore
+play/release/

@@ -792,6 +792,7 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
 
       @Override
       public void onSecureCallClicked() {
+        SimpleAnalytics.getInstance().logEvent("call_started");
         CommunicationActions.startVoiceCall(getActivity(), recipient);
       }
 
