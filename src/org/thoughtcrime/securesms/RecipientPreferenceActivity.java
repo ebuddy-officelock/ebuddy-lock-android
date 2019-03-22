@@ -45,6 +45,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.thoughtcrime.securesms.color.MaterialColor;
 import org.thoughtcrime.securesms.color.MaterialColors;
@@ -792,6 +793,7 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
 
       @Override
       public void onSecureCallClicked() {
+        FirebaseAnalytics.getInstance(getContext()).logEvent("call_started", new Bundle());
         CommunicationActions.startVoiceCall(getActivity(), recipient);
       }
 
