@@ -114,10 +114,11 @@ public class AdvancedPreferenceFragment extends CorrectedPreferenceFragment {
     try {
       if (context == null) return "";
 
-      String app     = context.getString(R.string.app_name);
-      String version = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+      String app      = context.getString(R.string.app_name);
+      String version  = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+      String onSignal = context.getString(R.string.based_on_signal);
 
-      return String.format("%s %s", app, version);
+      return String.format("%s %s - %s", app, version, onSignal);
     } catch (PackageManager.NameNotFoundException e) {
       Log.w(TAG, e);
       return context.getString(R.string.app_name);

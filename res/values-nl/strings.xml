@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <string name="app_name">eBuddy.lock</string>
+  <string name="based_on_signal">powered by Signal technology</string>
   <string name="ConversationListActivity_title">Gesprekken</string>
   <string name="yes">Ja</string>
   <string name="no">Nee</string>
