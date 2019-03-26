@@ -13,11 +13,11 @@ public class GiphyGifLoader extends GiphyLoader {
 
   @Override
   protected String getTrendingUrl() {
-    return "https://api.giphy.com/v1/gifs/trending?api_key=3o6ZsYH6U6Eri53TXy&offset=%d&limit=" + PAGE_SIZE;
+    return "https://api.giphy.com/v1/gifs/trending?api_key=u70MUA7wD3J8j4fQUnNLb9JtfWPqfTl7&offset=%d&limit=" + PAGE_SIZE;
   }
 
   @Override
   protected String getSearchUrl() {
-    return "https://api.giphy.com/v1/gifs/search?api_key=3o6ZsYH6U6Eri53TXy&offset=%d&limit=" + PAGE_SIZE + "&q=%s";
+    return "https://api.giphy.com/v1/gifs/search?api_key=u70MUA7wD3J8j4fQUnNLb9JtfWPqfTl7&offset=%d&limit=" + PAGE_SIZE + "&q=%s";
   }
 }
