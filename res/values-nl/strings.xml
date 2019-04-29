@@ -928,7 +928,7 @@ eBuddy.lock heeft ook toegang nodig tot de media op je apparaat, om bestanden bi
   <string name="unknown_sender_view__add_to_contacts">TOEVOEGEN AAN CONTACTEN</string>
   <string name="unknown_sender_view__don_t_add_but_make_my_profile_visible">NIET TOEVOEGEN, MAAR MIJN PROFIEL WEL ZICHTBAAR MAKEN</string>
   <!--verify_display_fragment-->
-  <string name="verify_display_fragment__if_you_wish_to_verify_the_security_of_your_end_to_end_encryption_with_s"><![CDATA[Als je de veiligheid van je eind-tot-eindversleuteling met %s wilt verifiëren, vergelijk dan de bovenstaande nummers met de nummers op het apparaat van je contact. Je kan ook de code op hun telefoon scannen, of hen vragen jouw code te scannen. <a href="https://signal.org/redirect/safety-numbers">Lees meer.</a>]]></string>
+  <string name="verify_display_fragment__if_you_wish_to_verify_the_security_of_your_end_to_end_encryption_with_s"><![CDATA[Als je de veiligheid van je eind-tot-eindversleuteling met %s wilt verifiëren, vergelijk dan de bovenstaande nummers met de nummers op het apparaat van je contact. Je kan ook de code op hun telefoon scannen, of hen vragen jouw code te scannen. <a href="https://lock.ebuddy.com/l/safety-number">Lees meer.</a>]]></string>
   <string name="verify_display_fragment__tap_to_scan">Tik om te scannen</string>
   <string name="verify_display_fragment__loading">Bezig met laden…</string>
   <string name="verify_display_fragment__verified">Geverifieerd</string>
