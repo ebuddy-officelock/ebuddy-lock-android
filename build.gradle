@@ -297,7 +297,7 @@ android {
         versionMajor = 3
         versionMinor = 0
         versionRevision = 0
-        buildNum = 10
+        buildNum = 11
     }
 
     defaultConfig {
@@ -322,7 +322,7 @@ android {
         buildConfigField "int", "CONTENT_PROXY_PORT", "443"
         buildConfigField "String", "USER_AGENT", "\"OWA\""
         buildConfigField "boolean", "DEV_BUILD", "false"
-        buildConfigField "String", "MRENCLAVE", "\"ba0f075dca49e2bfdbbb1ef9cb2383d71672cfb92ad49e95700df7c7aae68e06\""
+        buildConfigField "String", "MRENCLAVE", "\"cd6cfc342937b23b1bdd3bbf9721aa5615ac9ff50a75c5527d441cd3276826c9\""
         buildConfigField "String", "UNIDENTIFIED_SENDER_TRUST_ROOT", "\"BYrLZP4MR9uRWJBmX0v1Ob5PrU7/jK9kHwn2dwyapmR3\""
         buildConfigField "String[]", "LANGUAGES", "new String[]{\"" + autoResConfig().collect { s -> s.replace('-r', '_') }.join('", "') + '"}'
 
