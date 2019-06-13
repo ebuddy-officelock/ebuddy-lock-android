@@ -1853,7 +1853,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     } else if (!isSecureText && !isDefaultSms) {
       unblockButton.setVisibility(View.GONE);
       composePanel.setVisibility(View.GONE);
-      makeDefaultSmsButton.setVisibility(View.VISIBLE);
+//      makeDefaultSmsButton.setVisibility(View.VISIBLE);
       registerButton.setVisibility(View.GONE);
     } else {
       composePanel.setVisibility(View.VISIBLE);
@@ -2189,11 +2189,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void showDefaultSmsPrompt() {
-    new AlertDialog.Builder(this)
-                   .setMessage(R.string.ConversationActivity_signal_cannot_sent_sms_mms_messages_because_it_is_not_your_default_sms_app)
-                   .setNegativeButton(R.string.ConversationActivity_no, (dialog, which) -> dialog.dismiss())
-                   .setPositiveButton(R.string.ConversationActivity_yes, (dialog, which) -> handleMakeDefaultSms())
-                   .show();
+//    new AlertDialog.Builder(this)
+//                   .setMessage(R.string.ConversationActivity_signal_cannot_sent_sms_mms_messages_because_it_is_not_your_default_sms_app)
+//                   .setNegativeButton(R.string.ConversationActivity_no, (dialog, which) -> dialog.dismiss())
+//                   .setPositiveButton(R.string.ConversationActivity_yes, (dialog, which) -> handleMakeDefaultSms())
+//                   .show();
   }
 
   private void updateToggleButtonState() {
