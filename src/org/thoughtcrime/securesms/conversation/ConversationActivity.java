@@ -92,6 +92,7 @@ import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.RecipientPreferenceActivity;
 import org.thoughtcrime.securesms.RegistrationActivity;
 import org.thoughtcrime.securesms.ShortcutLauncherActivity;
+import org.thoughtcrime.securesms.SimpleAnalytics;
 import org.thoughtcrime.securesms.TransportOption;
 import org.thoughtcrime.securesms.VerifyIdentityActivity;
 import org.thoughtcrime.securesms.audio.AudioRecorder;
