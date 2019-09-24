@@ -302,7 +302,7 @@ android {
         versionMajor = 3
         versionMinor = 0
         versionRevision = 1
-        buildNum = 21
+        buildNum = 22
     }
 
     defaultConfig {
